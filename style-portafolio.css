@@ -10,7 +10,7 @@ body {
     background-color: var(--dark-bg);
     color: var(--text-white);
     font-family: 'Inter', sans-serif;
-    margin: 0;
+    margin: 0px;
     padding-bottom: 50px;
 }
 
@@ -19,9 +19,9 @@ header {
     padding: 60px 20px;
 }
 
-.logo-header {
-    width: 120px;
-    margin-bottom: 15px;
+.logo-header:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
 }
 
 /* LA MAGIA DEL GRID */
@@ -93,4 +93,162 @@ header {
     text-decoration: none;
     border-radius: 30px;
     font-weight: bold;
+}
+
+section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+section h2 {
+    margin-bottom: 20px;
+    color: var(--text-white);
+    border-left: 4px solid var(--primary-red);
+    padding-left: 10px;
+}
+
+.hero {
+    position: relative;
+    min-height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    background: url('img/portafolio.png') center/cover no-repeat;
+    margin: 60px 0px 30px 0px;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(7, 7, 7, 0.65);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.hero-text {
+    max-width: 600px;
+    text-align: left;
+}
+
+.hero-text h1 {
+    font-size: 2.8rem;
+    margin-bottom: 0px;
+
+    /* 🔥 sombra pro */
+    text-shadow: 0 0 10px rgba(117, 0, 0, 0.8),
+                 0 0 20px rgba(207, 0, 0, 0.6);
+}
+
+.hero-text h2 {
+    color: var(--primary-red);
+    margin-bottom: 35px;
+
+    text-shadow: 0 0 12px rgb(0, 0, 0);
+}
+
+.hero-text p {
+    color: var(--text-white);
+    line-height: 1.6;
+
+    text-shadow: 0 0 100px rgb(0, 0, 0);
+}
+
+.hero-logo img {
+    width: 160px;
+    transition: transform 0.3s ease;
+}
+
+.hero-logo img:hover {
+    transform: scale(1.40);
+}
+
+.btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 1px solid var(--primary-red);
+    color: var(--text-white);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: var(--primary-red);
+}
+
+.hero-logo img {
+    width: 160px;
+    transition: transform 2.3s ease, opacity 0.3s ease;
+}
+
+@media (min-width: 769px) {
+
+    .hero-text {
+        margin-left: 110px;   /* mueve el bloque completo */
+        margin-top: 100px;   /* opcional si quieres subir/bajar */
+    }
+
+    .hero-logo {
+        position: absolute;
+        right: 0;
+        top: 30px;
+        left: 1070px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .hero {
+        background: var(--dark-bg); /* sin imagen */
+        height: auto;
+        padding: 60px 20px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .hero::before {
+        display: none; /* elimina overlay */
+    }
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-logo img {
+        width: 120px;
+        margin-top: 20px;
+        pointer-events: none; /* evita clicks raros en mobile */
+    }
+
+    section {
+        margin: 40px auto;
+        padding: 0 15px;
+    }
+
+    section h2 {
+        font-size: 1.3rem;
+    }
+
+    .section-desc {
+        font-size: 0.9rem;
+        color: var(--text-gray);
+    }
+
 }

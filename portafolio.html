@@ -8,15 +8,38 @@
 </head>
 <body>
 
-    <header>
-        <img src="img/mad_transp.png" alt="MAD Dog Studio Logo" class="logo-header">
-        <h1>Proyectos & Desarrollos</h1>
-        <p>Soluciones digitales a medida</p>
-    </header>
+    <header class="hero">
 
-    <main class="portfolio-grid">
+    <div class="hero-content">
+        <div class="hero-text">
+            <h1>Gonzalo Cuevas</h1>
+            <h2>Desarrollo Web, Software & Soluciones Digitales</h2>
+            <p>
+            Diseño y desarrollo soluciones digitales enfocadas en automatización de procesos,
+            eficiencia operativa y experiencia de usuario, con especial foco en la industria marítima y proyectos web.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#proyectos" class="btn">Ver Proyectos</a>
+            </div>
+        </div>
+
+        <div class="hero-logo">
+            <img id="logoHero" src="img/mad_transp.png" alt="logo">
+        </div>
         
-        <a href="https://www.essenzainspiraciones.cl" target="_blank" class="project-card">
+    </div>
+
+</header>
+
+    <main>
+        <!-- DESARROLLO WEB -->
+    <section>
+        <h2>💻 Desarrollo Web</h2>
+        <p class="section-desc">Sitios web funcionales y orientados a conversión.</p>
+        <div class="portfolio-grid">
+
+            <a href="https://www.essenzainspiraciones.cl" target="_blank" class="project-card">
             <div class="card-image" style="background-image: url('img/essenza.png');"></div>
             <div class="card-content">
                 <h3>Essenza Inspiraciones</h3>
@@ -34,6 +57,16 @@
             </div>
         </a>
 
+        </div>
+    </section>
+
+    <!-- DEMOS -->
+    <section>
+        <h2>🌐 Demos & Prototipos</h2>
+        <p class="section-desc">Proyectos en fase de demostración o prototipado.</p>
+        <div class="portfolio-grid">
+
+            <!-- KosLife -->
         <a href="https://kos-life-web-demo.vercel.app" target="_blank" class="project-card">
             <div class="card-image" style="background-image: url('img/soul.png');"></div>
             <div class="card-content">
@@ -42,15 +75,65 @@
                 <span class="tag demo">Demo</span>
             </div>
         </a>
+            <!-- Mostos (nuevo) -->
+        <a href="https://mostos-web.vercel.app" target="_blank" class="project-card">
+            <div class="card-image" style="background-image: url('img/mostos.png');"></div>
+            <div class="card-content">
+                <h3>Mostos</h3>
+                <p>Perfumería y Cosmética (Web & E-commerce)</p>
+                <span class="tag demo">Demo</span>
+            </div>
+        </a>
 
+        </div>
+    </section>
+
+    <!-- SOFTWARE -->
+    <section>
+        <h2>⚙️ Aplicaciones & Software</h2>
+        <p class="section-desc">Soluciones digitales para optimizar procesos y operaciones.</p>
+        <div class="portfolio-grid">
+
+            <!-- Checklist -->
         <div class="project-card internal" onclick="openProject('mining')">
             <div class="card-image" style="background-image: url('img/checklist.png');"></div>
             <div class="card-content">
                 <h3>Checklist Minero</h3>
-                <p>App de digitalización pre-operacional</p>
+                <p>App de digitalización HSEC y pre-operacional para la gran minería</p>
                 <span class="tag dev">En Desarrollo</span>
             </div>
         </div>
+            <!-- MAD -->
+        <a href="https://madapp.cl/dashboard.html" target="_blank" class="project-card">
+            <div class="card-image" style="background-image: url('img/MAD.png');"></div>
+            <div class="card-content">
+                <h3>Maritime Agent Dashboard</h3>
+                <p>App de digitalización y automatizacion de procesos para industria marítima y portuaria</p>
+                <span class="tag dev">En Desarrollo</span>
+            </div>
+        </a>
+
+        </div>
+    </section>
+
+    <!-- DISEÑO -->
+    <section>
+        <h2>🎨 Diseño & Visualización Digital</h2>
+        <p class="section-desc">Propuestas visuales, branding y fotomontajes para eventos.</p>
+        <div class="portfolio-grid">
+
+            <!-- CCI -->
+        <div class="project-card internal" onclick="openProject('events')">
+            <div class="card-image" style="background-image: url('img/CCI.png');"></div>
+            <div class="card-content">
+                <h3>CCI – Cumbre Empresarial Francia-Chile 2026</h3>
+                <p>Propuesta visual y fotomontaje para evento en Metropolitan Santiago</p>
+                <span class="tag dev">En Desarrollo</span>
+            </div>
+        </div>
+
+        </div>
+    </section>
 
     </main>
 
@@ -58,6 +141,40 @@
         <p>¿Tienes un proyecto en mente?</p>
         <a href="mailto:dogstudio@madapp.cl" class="contact-btn">Hablemos</a>
     </footer>
+
+    <script>
+const logo = document.getElementById("logoHero");
+
+if (window.innerWidth > 768) {
+
+    let isAnimating = false;
+
+    logo.addEventListener("click", () => {
+        if (isAnimating) return;
+
+        isAnimating = true;
+
+        logo.style.opacity = 0;
+
+        setTimeout(() => {
+            logo.src = "img/Ltr Icon.png";
+            logo.style.opacity = 1;
+
+            setTimeout(() => {
+                logo.style.opacity = 0;
+
+                setTimeout(() => {
+                    logo.src = "img/mad_transp.png";
+                    logo.style.opacity = 1;
+                    isAnimating = false;
+                }, 200);
+
+            }, 3000);
+
+        }, 200);
+    });
+}
+</script>
 
 </body>
 </html>
