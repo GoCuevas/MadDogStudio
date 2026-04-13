@@ -115,8 +115,7 @@ section h2 {
     align-items: center;
     justify-content: center;
     padding: 40px;
-    background: url('img/portafolio.png') center/cover no-repeat;
-    margin: 60px 0px 30px 0px;
+    background: url('img/Portafolio.png') center/cover no-repeat;
 }
 
 .hero::before {
