@@ -5,135 +5,253 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MAD Dog Studio | Portafolio</title>
     <link rel="stylesheet" href="style-portafolio.css">
+    
+    <style>
+        .proyecto-destacado {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .proyecto-destacado h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        /* --- Estilos Video y Afiche --- */
+        .media-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .afiche-wrapper {
+            flex: 1 1 250px;
+            max-width: 300px;
+        }
+        .img-fluida {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        .video-wrapper {
+            flex: 2 1 400px;
+            position: relative;
+            padding-bottom: 31.25%; /* Ajuste para mantener proporción */
+            min-height: 350px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* --- Estilos Slider Antes/Después --- */
+        .image-compare-container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin: 20px auto 40px auto;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            line-height: 0; /* Evita espacios en blanco debajo de la imagen */
+        }
+        .img-after {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .img-before-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%; /* Inicio al 50% */
+            height: 100%;
+            overflow: hidden;
+            border-right: 3px solid #fff; /* Línea separadora blanca */
+            box-shadow: 5px 0 15px rgba(0,0,0,0.5);
+        }
+        .img-before {
+            display: block;
+            width: 100vw; /* Truco para mantener proporción original al recortar */
+            max-width: 1000px; /* Mismo max-width que el contenedor */
+            height: 100%;
+            object-fit: cover;
+            object-position: left;
+        }
+        .slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0; /* Oculto pero clickeable */
+            cursor: ew-resize;
+            z-index: 10;
+        }
+        
+        /* Ajuste para la clase existente section-desc si es necesario */
+        .section-desc {
+            margin-bottom: 30px;
+        }
+    </style>
 </head>
 <body>
 
     <header class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Gonzalo Cuevas</h1>
+                <h2>Desarrollo Web, Software & Soluciones Digitales</h2>
+                <p>
+                Diseño y desarrollo soluciones digitales enfocadas en automatización de procesos,
+                eficiencia operativa y experiencia de usuario, con especial foco en la industria marítima y proyectos web.
+                </p>
 
-    <div class="hero-content">
-        <div class="hero-text">
-            <h1>Gonzalo Cuevas</h1>
-            <h2>Desarrollo Web, Software & Soluciones Digitales</h2>
-            <p>
-            Diseño y desarrollo soluciones digitales enfocadas en automatización de procesos,
-            eficiencia operativa y experiencia de usuario, con especial foco en la industria marítima y proyectos web.
-            </p>
+                <div class="hero-buttons">
+                    <a href="#proyectos" class="btn">Ver Proyectos</a>
+                </div>
+            </div>
 
-            <div class="hero-buttons">
-                <a href="#proyectos" class="btn">Ver Proyectos</a>
+            <div class="hero-logo">
+                <img id="logoHero" src="img/mad_transp.png" alt="logo">
             </div>
         </div>
+    </header>
 
-        <div class="hero-logo">
-            <img id="logoHero" src="img/mad_transp.png" alt="logo">
-        </div>
-        
-    </div>
+    <main id="proyectos">
+        <section>
+            <h2>💻 Desarrollo Web</h2>
+            <p class="section-desc">Sitios web funcionales y orientados a conversión.</p>
+            <div class="portfolio-grid">
 
-</header>
+                <a href="https://www.essenzainspiraciones.cl" target="_blank" class="project-card">
+                    <div class="card-image" style="background-image: url('img/essenza.png');"></div>
+                    <div class="card-content">
+                        <h3>Essenza Inspiraciones</h3>
+                        <p>E-commerce Premium de Perfumería (Shopify)</p>
+                        <span class="tag">En Vivo</span>
+                    </div>
+                </a>
 
-    <main>
-        <!-- DESARROLLO WEB -->
-    <section>
-        <h2>💻 Desarrollo Web</h2>
-        <p class="section-desc">Sitios web funcionales y orientados a conversión.</p>
-        <div class="portfolio-grid">
+                <a href="https://www.bengaladigital.cl" target="_blank" class="project-card">
+                    <div class="card-image" style="background-image: url('img/bengala.png');"></div>
+                    <div class="card-content">
+                        <h3>Bengala Digital</h3>
+                        <p>Agencia Creativa (WordPress)</p>
+                        <span class="tag">En Vivo</span>
+                    </div>
+                </a>
 
-            <a href="https://www.essenzainspiraciones.cl" target="_blank" class="project-card">
-            <div class="card-image" style="background-image: url('img/essenza.png');"></div>
-            <div class="card-content">
-                <h3>Essenza Inspiraciones</h3>
-                <p>E-commerce Premium de Perfumería (Shopify)</p>
-                <span class="tag">En Vivo</span>
             </div>
-        </a>
+        </section>
 
-        <a href="https://www.bengaladigital.cl" target="_blank" class="project-card">
-            <div class="card-image" style="background-image: url('img/bengala.png');"></div>
-            <div class="card-content">
-                <h3>Bengala Digital</h3>
-                <p>Agencia Creativa (WordPress)</p>
-                <span class="tag">En Vivo</span>
+        <section>
+            <h2>🌐 Demos & Prototipos</h2>
+            <p class="section-desc">Proyectos en fase de demostración o prototipado.</p>
+            <div class="portfolio-grid">
+
+                <a href="https://kos-life-web-demo.vercel.app" target="_blank" class="project-card">
+                    <div class="card-image" style="background-image: url('img/soul.png');"></div>
+                    <div class="card-content">
+                        <h3>KosLife</h3>
+                        <p>Salud y Belleza (Web & E-commerce)</p>
+                        <span class="tag demo">Demo</span>
+                    </div>
+                </a>
+                <a href="https://mostos-web.vercel.app" target="_blank" class="project-card">
+                    <div class="card-image" style="background-image: url('img/mostos.png');"></div>
+                    <div class="card-content">
+                        <h3>Mostos</h3>
+                        <p>Perfumería y Cosmética (Web & E-commerce)</p>
+                        <span class="tag demo">Demo</span>
+                    </div>
+                </a>
+
             </div>
-        </a>
+        </section>
 
-        </div>
-    </section>
+        <section>
+            <h2>⚙️ Aplicaciones & Software</h2>
+            <p class="section-desc">Soluciones digitales para optimizar procesos y operaciones.</p>
+            <div class="portfolio-grid">
 
-    <!-- DEMOS -->
-    <section>
-        <h2>🌐 Demos & Prototipos</h2>
-        <p class="section-desc">Proyectos en fase de demostración o prototipado.</p>
-        <div class="portfolio-grid">
+                <div class="project-card internal" onclick="openProject('mining')">
+                    <div class="card-image" style="background-image: url('img/checklist.png');"></div>
+                    <div class="card-content">
+                        <h3>Checklist Minero</h3>
+                        <p>App de digitalización HSEC y pre-operacional para la gran minería</p>
+                        <span class="tag dev">En Desarrollo</span>
+                    </div>
+                </div>
+                <a href="https://madapp.cl/dashboard.html" target="_blank" class="project-card">
+                    <div class="card-image" style="background-image: url('img/MAD.png');"></div>
+                    <div class="card-content">
+                        <h3>Maritime Agent Dashboard</h3>
+                        <p>App de digitalización y automatizacion de procesos para industria marítima y portuaria</p>
+                        <span class="tag dev">En Desarrollo</span>
+                    </div>
+                </a>
 
-            <!-- KosLife -->
-        <a href="https://kos-life-web-demo.vercel.app" target="_blank" class="project-card">
-            <div class="card-image" style="background-image: url('img/soul.png');"></div>
-            <div class="card-content">
-                <h3>KosLife</h3>
-                <p>Salud y Belleza (Web & E-commerce)</p>
-                <span class="tag demo">Demo</span>
             </div>
-        </a>
-            <!-- Mostos (nuevo) -->
-        <a href="https://mostos-web.vercel.app" target="_blank" class="project-card">
-            <div class="card-image" style="background-image: url('img/mostos.png');"></div>
-            <div class="card-content">
-                <h3>Mostos</h3>
-                <p>Perfumería y Cosmética (Web & E-commerce)</p>
-                <span class="tag demo">Demo</span>
+        </section>
+
+        <section>
+            <h2>🎬 Producción Audiovisual & IA</h2>
+            <p class="section-desc">Generación de contenido visual de alto impacto integrando Inteligencia Artificial.</p>
+            
+            <div class="proyecto-destacado">
+                <h3>Cortometraje "El Huaso y El Diablo"</h3>
+                <p>Concepto, Generación con IA y Postproducción de video. Uniendo narrativa chilena con tecnología de vanguardia.</p>
+                
+                <div class="media-container">
+                    <div class="afiche-wrapper">
+                        <img src="img/afiche.png" alt="Afiche El Huaso y El Diablo" class="img-fluida">
+                    </div>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/ay1fWmrpcik?si=Wc0Ip3oR1-x5Cgmj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>
-        </a>
+        </section>
 
-        </div>
-    </section>
-
-    <!-- SOFTWARE -->
-    <section>
-        <h2>⚙️ Aplicaciones & Software</h2>
-        <p class="section-desc">Soluciones digitales para optimizar procesos y operaciones.</p>
-        <div class="portfolio-grid">
-
-            <!-- Checklist -->
-        <div class="project-card internal" onclick="openProject('mining')">
-            <div class="card-image" style="background-image: url('img/checklist.png');"></div>
-            <div class="card-content">
-                <h3>Checklist Minero</h3>
-                <p>App de digitalización HSEC y pre-operacional para la gran minería</p>
-                <span class="tag dev">En Desarrollo</span>
-            </div>
-        </div>
-            <!-- MAD -->
-        <a href="https://madapp.cl/dashboard.html" target="_blank" class="project-card">
-            <div class="card-image" style="background-image: url('img/MAD.png');"></div>
-            <div class="card-content">
-                <h3>Maritime Agent Dashboard</h3>
-                <p>App de digitalización y automatizacion de procesos para industria marítima y portuaria</p>
-                <span class="tag dev">En Desarrollo</span>
-            </div>
-        </a>
-
-        </div>
-    </section>
-
-    <!-- DISEÑO -->
-    <section>
-        <h2>🎨 Diseño & Visualización Digital</h2>
-        <p class="section-desc">Propuestas visuales, branding y fotomontajes para eventos.</p>
-        <div class="portfolio-grid">
-
-            <!-- CCI -->
-        <div class="project-card internal" onclick="openProject('events')">
-            <div class="card-image" style="background-image: url('img/CCI.png');"></div>
-            <div class="card-content">
+        <section>
+            <h2>🎨 Diseño & Visualización Digital</h2>
+            <p class="section-desc">Propuestas visuales, branding y fotomontajes arquitectónicos para eventos corporativos.</p>
+            
+            <div class="proyecto-destacado">
                 <h3>CCI – Cumbre Empresarial Francia-Chile 2026</h3>
-                <p>Propuesta visual y fotomontaje para evento en Metropolitan Santiago</p>
-                <span class="tag dev">En Desarrollo</span>
-            </div>
-        </div>
+                <p>Propuesta visual para evento en Metropolitan Santiago. <b>¡Desliza la barra central y verás la transformación del espacio! (Antes y Después).</b></p>
+                
+                <div class="image-compare-container">
+                    <img class="img-after" src="img/Exterior2.png" alt="Exterior con branding CCI (Despues)">
+                    <div class="img-before-wrapper">
+                        <img class="img-before" src="img/Exterior1.jpeg" alt="Exterior original vacío (Antes)">
+                    </div>
+                    <input type="range" min="1" max="100" value="50" class="slider" oninput="updateSlider(this)">
+                </div>
 
-        </div>
-    </section>
+                <div class="image-compare-container">
+                    <img class="img-after" src="img/Pasillo2.png" alt="Foyer con stands de la CCI (Despues)">
+                    <div class="img-before-wrapper">
+                        <img class="img-before" src="img/pasillo.jpeg" alt="Pasillo original vacío (Antes)">
+                    </div>
+                    <input type="range" min="1" max="100" value="50" class="slider" oninput="updateSlider(this)">
+                </div>
+                
+            </div>
+        </section>
 
     </main>
 
@@ -143,38 +261,45 @@
     </footer>
 
     <script>
-const logo = document.getElementById("logoHero");
+        // --- Animación del Logo Original ---
+        const logo = document.getElementById("logoHero");
 
-if (window.innerWidth > 768) {
+        if (window.innerWidth > 768) {
+            let isAnimating = false;
 
-    let isAnimating = false;
+            logo.addEventListener("click", () => {
+                if (isAnimating) return;
 
-    logo.addEventListener("click", () => {
-        if (isAnimating) return;
-
-        isAnimating = true;
-
-        logo.style.opacity = 0;
-
-        setTimeout(() => {
-            logo.src = "img/Ltr Icon.png";
-            logo.style.opacity = 1;
-
-            setTimeout(() => {
+                isAnimating = true;
                 logo.style.opacity = 0;
 
                 setTimeout(() => {
-                    logo.src = "img/mad_transp.png";
+                    logo.src = "img/Ltr Icon.png";
                     logo.style.opacity = 1;
-                    isAnimating = false;
+
+                    setTimeout(() => {
+                        logo.style.opacity = 0;
+
+                        setTimeout(() => {
+                            logo.src = "img/mad_transp.png";
+                            logo.style.opacity = 1;
+                            isAnimating = false;
+                        }, 200);
+
+                    }, 3000);
+
                 }, 200);
+            });
+        }
 
-            }, 3000);
-
-        }, 200);
-    });
-}
-</script>
+        // --- Script para los Sliders de Antes y Después ---
+        function updateSlider(element) {
+            // Busca el div de la imagen "Antes" que está en el mismo contenedor
+            const wrapper = element.parentElement.querySelector('.img-before-wrapper');
+            // Ajusta el ancho de la envoltura según el valor del rango (1 a 100)
+            wrapper.style.width = element.value + "%";
+        }
+    </script>
 
 </body>
 </html>
