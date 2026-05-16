@@ -8,7 +8,7 @@
 
 body {
     background-color: var(--dark-bg);
-    background-image: url('');
+    background-image: url('img/maddor.png');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
