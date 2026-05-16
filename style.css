@@ -4,12 +4,15 @@
     box-sizing: border-box;
 }
 
-body {
-    background-color: var(--dark-bg);
-    color: var(--text-white);
-    font-family: 'Inter', sans-serif;
-    margin: 0px;
-    padding-bottom: 50px;
+    body {
+    background-color: #0a0e14; /* Un tono oscuro neutro */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+}
+
 }
 
 .selector-container {
