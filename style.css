@@ -6,11 +6,6 @@
 
 body {
     background-color: var(--dark-bg);
-    background-image: url('img/MadRusty.png');
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     color: var(--text-white);
     font-family: 'Inter', sans-serif;
     margin: 0px;
